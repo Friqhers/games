@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import { API, graphqlOperation } from 'aws-amplify'
-import Query from "../src/graphql/queries"
+import {listGames}from "./graphql/queries"
 
 
 
 class App extends Component {
   state = { games: [] }
   async componentDidMount() {
-    const data = await API.graphql(graphqlOperation(Query.listGames))
+    const data = await API.graphql(graphqlOperation(listGames))
     this.setState({
       games: data.data.listGames.items
     })
+    console.log(this.state.games);
   }
   render() {
     return (
       <div className="App">
-          {this.state.games.map((game,index)=>{
-            <p key={index}>
-              {game.name}
-            </p>
-
-          })}
+         {this.state.games.map(game =>(
+           game.name
+         ))}
       </div>
     );
   }
