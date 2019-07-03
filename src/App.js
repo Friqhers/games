@@ -21,6 +21,8 @@ class App extends Component {
          {this.state.games.map(game =>(
            game.name
          ))}
+
+         Test
       </div>
     );
   }
