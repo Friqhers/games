@@ -1,3 +1,6 @@
+#run 
+#amplify push after changing
+
 type Game @model {
 	id: ID!
   name: String!
