@@ -2,7 +2,7 @@ projects:
   games:
     schemaPath: src\graphql\schema.json
     includes:
-      - src\graphql\schema.graphql.js
+      - src\graphql\**\*.js
     excludes:
       - ./amplify/**
     extensions:

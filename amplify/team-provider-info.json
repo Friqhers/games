@@ -10,5 +10,17 @@
             "StackName": "games-react-20190703130612",
             "StackId": "arn:aws:cloudformation:eu-central-1:167964866156:stack/games-react-20190703130612/2f8d6f80-9d7a-11e9-add7-0aee446e3232"
         }
+    },
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "games-master-20190703153254-authRole",
+            "UnauthRoleArn": "arn:aws:iam::000011783816:role/games-master-20190703153254-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::000011783816:role/games-master-20190703153254-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "games-master-20190703153254-deployment",
+            "UnauthRoleName": "games-master-20190703153254-unauthRole",
+            "StackName": "games-master-20190703153254",
+            "StackId": "arn:aws:cloudformation:eu-central-1:000011783816:stack/games-master-20190703153254/adcd71b0-9d8e-11e9-b01a-0692890e48f0"
+        }
     }
 }
