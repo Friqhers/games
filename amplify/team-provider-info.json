@@ -1,0 +1,14 @@
+{
+    "react": {
+        "awscloudformation": {
+            "AuthRoleName": "games-react-20190703130612-authRole",
+            "UnauthRoleArn": "arn:aws:iam::167964866156:role/games-react-20190703130612-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::167964866156:role/games-react-20190703130612-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "games-react-20190703130612-deployment",
+            "UnauthRoleName": "games-react-20190703130612-unauthRole",
+            "StackName": "games-react-20190703130612",
+            "StackId": "arn:aws:cloudformation:eu-central-1:167964866156:stack/games-react-20190703130612/2f8d6f80-9d7a-11e9-add7-0aee446e3232"
+        }
+    }
+}

@@ -1,0 +1,4 @@
+{
+    "AppSyncApiName": "games",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST"
+}

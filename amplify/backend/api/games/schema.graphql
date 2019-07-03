@@ -1,0 +1,12 @@
+type Game @model {
+	name: String!
+	id:Int!
+	release_date:String!
+	genre:String!
+	rating:Float
+	description:String!
+	images:[String!]
+	videos:[String!]
+	number_of_views:Int!
+	thumbnail_img:String!
+}
