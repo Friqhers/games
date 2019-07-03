@@ -3,46 +3,28 @@
 
 export const onCreateGame = `subscription OnCreateGame {
   onCreateGame {
-    name
     id
-    release_date
-    genre
-    rating
+    name
     description
-    images
-    videos
-    number_of_views
-    thumbnail_img
+    location
   }
 }
 `;
 export const onUpdateGame = `subscription OnUpdateGame {
   onUpdateGame {
-    name
     id
-    release_date
-    genre
-    rating
+    name
     description
-    images
-    videos
-    number_of_views
-    thumbnail_img
+    location
   }
 }
 `;
 export const onDeleteGame = `subscription OnDeleteGame {
   onDeleteGame {
-    name
     id
-    release_date
-    genre
-    rating
+    name
     description
-    images
-    videos
-    number_of_views
-    thumbnail_img
+    location
   }
 }
 `;

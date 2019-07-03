@@ -3,46 +3,28 @@
 
 export const createGame = `mutation CreateGame($input: CreateGameInput!) {
   createGame(input: $input) {
-    name
     id
-    release_date
-    genre
-    rating
+    name
     description
-    images
-    videos
-    number_of_views
-    thumbnail_img
+    location
   }
 }
 `;
 export const updateGame = `mutation UpdateGame($input: UpdateGameInput!) {
   updateGame(input: $input) {
-    name
     id
-    release_date
-    genre
-    rating
+    name
     description
-    images
-    videos
-    number_of_views
-    thumbnail_img
+    location
   }
 }
 `;
 export const deleteGame = `mutation DeleteGame($input: DeleteGameInput!) {
   deleteGame(input: $input) {
-    name
     id
-    release_date
-    genre
-    rating
+    name
     description
-    images
-    videos
-    number_of_views
-    thumbnail_img
+    location
   }
 }
 `;

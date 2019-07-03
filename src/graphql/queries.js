@@ -3,16 +3,10 @@
 
 export const getGame = `query GetGame($id: ID!) {
   getGame(id: $id) {
-    name
     id
-    release_date
-    genre
-    rating
+    name
     description
-    images
-    videos
-    number_of_views
-    thumbnail_img
+    location
   }
 }
 `;
@@ -23,16 +17,10 @@ export const listGames = `query ListGames(
 ) {
   listGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
-      name
       id
-      release_date
-      genre
-      rating
+      name
       description
-      images
-      videos
-      number_of_views
-      thumbnail_img
+      location
     }
     nextToken
   }
