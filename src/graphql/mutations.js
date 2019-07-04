@@ -6,7 +6,13 @@ export const createGame = `mutation CreateGame($input: CreateGameInput!) {
     id
     name
     description
-    location
+    platform
+    release_date
+    genre
+    rating
+    images
+    thumbnail_img
+    video
   }
 }
 `;
@@ -15,7 +21,13 @@ export const updateGame = `mutation UpdateGame($input: UpdateGameInput!) {
     id
     name
     description
-    location
+    platform
+    release_date
+    genre
+    rating
+    images
+    thumbnail_img
+    video
   }
 }
 `;
@@ -24,7 +36,13 @@ export const deleteGame = `mutation DeleteGame($input: DeleteGameInput!) {
     id
     name
     description
-    location
+    platform
+    release_date
+    genre
+    rating
+    images
+    thumbnail_img
+    video
   }
 }
 `;

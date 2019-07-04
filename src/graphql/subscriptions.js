@@ -6,7 +6,13 @@ export const onCreateGame = `subscription OnCreateGame {
     id
     name
     description
-    location
+    platform
+    release_date
+    genre
+    rating
+    images
+    thumbnail_img
+    video
   }
 }
 `;
@@ -15,7 +21,13 @@ export const onUpdateGame = `subscription OnUpdateGame {
     id
     name
     description
-    location
+    platform
+    release_date
+    genre
+    rating
+    images
+    thumbnail_img
+    video
   }
 }
 `;
@@ -24,7 +36,13 @@ export const onDeleteGame = `subscription OnDeleteGame {
     id
     name
     description
-    location
+    platform
+    release_date
+    genre
+    rating
+    images
+    thumbnail_img
+    video
   }
 }
 `;

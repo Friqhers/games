@@ -5,7 +5,13 @@ type Game @model {
 	id: ID!
   name: String!
   description: String
-  location: String
+  platform: String
+  release_date: String
+  genre: String
+  rating: Float
+  images: [String]
+  thumbnail_img: String
+  video: String
 }
 # type Game @model {
 # 	name: String!

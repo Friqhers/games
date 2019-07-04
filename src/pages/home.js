@@ -15,7 +15,7 @@ class Home extends Component {
 
   async componentDidMount() {
     console.log("componentDidmount");
-    const data = await API.graphql(graphqlOperation(listGames, { filter: { name: { contains: 'Forza' } } }))
+    const data = await API.graphql(graphqlOperation(listGames, { filter: { name: { contains: 'Witcher' } } }))
     if (data != null) {
       this.setState({
         games: data.data.listGames.items

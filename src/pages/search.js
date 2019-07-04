@@ -70,19 +70,20 @@ class Search extends Component {
                                             </Link>
 
 
-                                            {result.image != null ? (<Link to={`/search/details/${result.id}`} className="rounded .mxauto d-block">
-                                                <img src={result.image.square_tiny} className="rounded imagePoster"></img>
+                                            {result.images != null ? (<Link to={`/search/details/${result.id}`} className="rounded .mxauto d-block">
+                                                <img src={result.thumbnail_img} className="rounded imagePoster"></img>
                                             </Link>
                                             ) : null}
 
                                             <p className="text-center game_text">
                                                 <b>Release Date: </b>
+                                                {result.release_date}
                                                
                                             </p>
 
                                             <p className="text-center game_text">
-                                                <b>Short Sum: </b>
-                                                
+                                                <b>Rating: </b>
+                                                {result.rating}
                                             </p>
                                         </div>
                                     </div>
