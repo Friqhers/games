@@ -1,6 +1,8 @@
 // eslint-disable
 // this is an auto generated file. This will be overwritten
 
+// amplify update api after changes
+
 export const getGame = `query GetGame($id: ID!) {
   getGame(id: $id) {
     id
@@ -10,9 +12,13 @@ export const getGame = `query GetGame($id: ID!) {
   }
 }
 `;
+
+
+
+
 export const listGames = `query ListGames(
   $filter: ModelGameFilterInput
-  $limit: Int
+  $limit: Int 
   $nextToken: String
 ) {
   listGames(filter: $filter, limit: $limit, nextToken: $nextToken) {
