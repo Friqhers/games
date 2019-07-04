@@ -74,17 +74,18 @@ class Search extends Component {
                                                 <img src={result.thumbnail_img} className="rounded imagePoster"></img>
                                             </Link>
                                             ) : null}
+                                            <div className="align-bottom">
+                                                <p className="text-center game_text">
+                                                    <b>Release Date: </b>
+                                                    {result.release_date}
 
-                                            <p className="text-center game_text">
-                                                <b>Release Date: </b>
-                                                {result.release_date}
-                                               
-                                            </p>
+                                                </p>
 
-                                            <p className="text-center game_text">
-                                                <b>Rating: </b>
-                                                {result.rating}
-                                            </p>
+                                                <p className="text-center game_text">
+                                                    <b>Rating: </b>
+                                                    {result.rating}
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div> : (false)

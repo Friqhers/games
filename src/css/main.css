@@ -87,8 +87,8 @@ body {
     border-color: black; */
     background-color: rgba(94, 95, 97, 0.9);
     border-radius: 5px;
-    width: 300px;
-    height: 450px;
+    width: 500px;
+    height: 550px;
   }
   .game_card_bottom {
     background-color: rgba(41, 42, 43, 0.3);
@@ -103,7 +103,7 @@ body {
     display: flex;
     height: 450px;
     margin: 77px;
-    width: 300px;
+    width: 500px;
   }
   #test {
     display: flex;
