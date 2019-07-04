@@ -1,8 +1,9 @@
 body {
-    background-image: url("images/backround4.jpg");
-    background-size: 120%;
-  }
-  
+     background-image: url("images/background5.jpg");
+    background-size: 100%;
+
+  } 
+
   @import url(https://fonts.googleapis.com/css?family=Kreon:400);
   
   .home {

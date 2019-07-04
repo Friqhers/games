@@ -108,7 +108,7 @@ class Search extends Component {
         const search_name = this.state.search_name;
 
         return (
-            <div className="container-fluid">
+            <div className="container-fluid background">
 
                 {/*HEADER START*/}
                 <nav className="navbar navbar-expand-lg bg-dark navbar-dark justify-content-left fixed-top">
