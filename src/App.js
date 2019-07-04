@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { API, graphqlOperation } from 'aws-amplify'
-import {listGames}from "./graphql/queries"
+import {listGames} from "./graphql/queries"
 
 
 
 class App extends Component {
   state = { games: [] }
   async componentDidMount() {
+    console.log("componentDidmount");
     const data = await API.graphql(graphqlOperation(listGames))
     this.setState({
       games: data.data.listGames.items
