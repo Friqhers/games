@@ -164,10 +164,10 @@ class Search extends Component {
                 {/*HEADER END*/}
 
                 {/*Row 1 START*/}
-                <div className="row content">
+                <div className="row">
 
                     {/*Col 1 START*/}
-                    <div className="col-lg-12 search_gamecard" id="center_text">
+                    <div className="col-lg-12" id="center_text">
                         {
                             this.renderGames()
                         }

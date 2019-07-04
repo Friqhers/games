@@ -47,7 +47,6 @@ class GameDetails extends Component {
     // }
     renderGame() {
         console.log("renderGames");
-        console.log(this.state.isLoading)
         return (
             <div>
                 {this.state.isLoading ? (<div className="col-lg-12 loader"><ClipLoader margin={100} sizeUnit={"px"} size={150} color='#7720A2'></ClipLoader> </div>) : (
@@ -97,7 +96,9 @@ class GameDetails extends Component {
                                                 <h1 className="text-center title_details">Galery</h1>
                                                 <div>
                                                     {
-                                                      <img src={result.images}></img>
+                                                        result.images.map(img =>(
+                                                            <img src={img}></img>
+                                                        ))
                                                     }
                                                 </div>
 
@@ -118,8 +119,8 @@ class GameDetails extends Component {
             </div>
         );
     }
-    render() {
 
+    render() {
         return (
             <div>
                 {this.renderGame()}

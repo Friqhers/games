@@ -103,6 +103,7 @@ body {
     display: flex;
     height: 450px;
     margin: 77px;
+    margin-left: 135px;
     width: 500px;
   }
   #test {

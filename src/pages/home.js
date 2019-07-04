@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { API, graphqlOperation, graphql } from 'aws-amplify'
 import { listGames, getGame } from "../graphql/queries"
 import { Link } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 
 class Home extends Component {
   constructor() {
@@ -15,7 +16,7 @@ class Home extends Component {
 
   async componentDidMount() {
     console.log("componentDidmount");
-    const data = await API.graphql(graphqlOperation(listGames, { filter: { name: { contains: 'Witcher' } } }))
+    const data = await API.graphql(graphqlOperation(listGames));
     if (data != null) {
       this.setState({
         games: data.data.listGames.items
@@ -28,8 +29,58 @@ class Home extends Component {
   // {this.state.games.map(game => (
   //   game.name
   // ))}
+  renderGames() {
+    console.log("renderGames");
+    if (true) {
+      return (
+        <div>
+          {this.state.isLoading ? (<div className="col-lg-12 loader"><ClipLoader margin={100} sizeUnit={"px"} size={150} color='#7720A2'></ClipLoader> </div>) : (
+            <div id="test">{
+              Array.isArray(this.state.games) &&
+              this.state.games.map(result => (result.description != "" ?
+                <div className="search_gamecard">
+                  <div key={result.id}>
+                    <div className="game_card align-items-center">
+                      <Link id="game_header_link" to={`/details/${result.id}`}>
+                        <h4 className="text-center .mx-auto d-block title">{
+                          result.name
+                        }</h4>
+                      </Link>
+
+
+                      {result.images != null ? (<Link to={`/search/details/${result.id}`} className="rounded .mxauto d-block">
+                        <img src={result.thumbnail_img} className="rounded imagePoster"></img>
+                      </Link>
+                      ) : null}
+                      <div className="align-bottom">
+                        <p className="text-center game_text">
+                          <b>Release Date: </b>
+                          {result.release_date}
+
+                        </p>
+
+                        <p className="text-center game_text">
+                          <b>Rating: </b>
+                          {result.rating}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div> : (false)
+              ))
+            }</div>
+          )}
+        </div>
+      );
+    } else {
+      return (
+        <div><h3>No Result Found!</h3></div>
+      );
+    }
+
+  }
   render() {
-    const search_name=this.state.search_name;
+    const search_name = this.state.search_name;
 
     return (
       <div className="container-fluid">
@@ -68,10 +119,10 @@ class Home extends Component {
                       //search_name_url: e.currentTarget.value
                     });
                   }}
-                  //onKeyDown={this.handleKeyPress}
+                //onKeyDown={this.handleKeyPress}
                 />
                 <Link className="btn btn-success"
-                  to={search_name != null && search_name.length != 0 && search_name != "Search" ? (`/search/${search_name}`) : (`/`)               } 
+                  to={search_name != null && search_name.length != 0 && search_name != "Search" ? (`/search/${search_name}`) : (`/`)}
                 >Search</Link>
               </li>
 
@@ -80,6 +131,11 @@ class Home extends Component {
           </div>
         </nav>
         {/*HEADER END*/}
+        <div className="row">
+          <div class="col-lg-12">
+            {this.renderGames()}
+          </div>
+        </div>
 
       </div>
     );
