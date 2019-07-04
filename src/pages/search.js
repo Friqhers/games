@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { API, graphqlOperation, graphql } from 'aws-amplify'
 import { listGames, getGame } from "../graphql/queries"
 import { Link } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 
 class Search extends Component {
     constructor() {
@@ -11,14 +12,17 @@ class Search extends Component {
             games: [],
             search_name: "",
             search_name_url: "",
+            isLoading: false,
         }
     }
     async componentDidMount() {
         console.log("componentDidmount");
+        this.setState({ isLoading: true });
         const data = await API.graphql(graphqlOperation(listGames, { filter: { name: { contains: `${this.props.match.params.search_name}` } } }))
         if (data != null) {
             this.setState({
-                games: data.data.listGames.items
+                games: data.data.listGames.items,
+                isLoading: false
 
             })
         }
@@ -26,11 +30,12 @@ class Search extends Component {
     }
     async getGame() {
         console.log("getGame");
+        this.setState({ isLoading: true });
         const data = await API.graphql(graphqlOperation(listGames, { filter: { name: { contains: `${this.state.search_name_url}` } } }))
         if (data != null) {
             this.setState({
-                games: data.data.listGames.items
-
+                games: data.data.listGames.items,
+                isLoading: false
             })
         }
         console.log(this.state.games);
@@ -45,6 +50,54 @@ class Search extends Component {
                 this.props.history.push(`/search/${this.state.search_name}`);
             }
         }
+    }
+    renderGames() {
+        console.log("renderGames");
+        if (true) {
+            return (
+                <div>
+                    {this.state.isLoading ? (<div className="col-lg-12 loader"><ClipLoader margin={100} sizeUnit={"px"} size={150} color='#7720A2'></ClipLoader> </div>) : (
+                        <div id="test">{
+                            Array.isArray(this.state.games) &&
+                            this.state.games.map(result => (result.description != "" ?
+                                <div className="search_gamecard">
+                                    <div key={result.id}>
+                                        <div className="game_card align-items-center">
+                                            <Link id="game_header_link" to={`/search/details/${result.id}`}>
+                                                <h4 className="text-center .mx-auto d-block title">{
+                                                    result.name
+                                                }</h4>
+                                            </Link>
+
+
+                                            {result.image != null ? (<Link to={`/search/details/${result.id}`} className="rounded .mxauto d-block">
+                                                <img src={result.image.square_tiny} className="rounded imagePoster"></img>
+                                            </Link>
+                                            ) : null}
+
+                                            <p className="text-center game_text">
+                                                <b>Release Date: </b>
+                                               
+                                            </p>
+
+                                            <p className="text-center game_text">
+                                                <b>Short Sum: </b>
+                                                
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div> : (false)
+                            ))
+                        }</div>
+                    )}
+                </div>
+            );
+        } else {
+            return (
+                <div><h3>No Result Found!</h3></div>
+            );
+        }
+
     }
     // {this.state.games.map(game => (
     //   game.name
@@ -107,6 +160,19 @@ class Search extends Component {
                     </div>
                 </nav>
                 {/*HEADER END*/}
+
+                {/*Row 1 START*/}
+                <div className="row content">
+
+                    {/*Col 1 START*/}
+                    <div className="col-lg-12 search_gamecard" id="center_text">
+                        {
+                            this.renderGames()
+                        }
+                    </div>
+                    {/*Col 1 END*/}
+                </div>
+                {/*Row 1 END*/}
 
             </div>
         );
