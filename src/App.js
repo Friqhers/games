@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
-import './App.css';
 
-import { API, graphqlOperation, graphql } from 'aws-amplify'
-import { listGames,getGame } from "./graphql/queries"
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Home from './pages/home';
 
 class App extends Component {
-  state = { games: [] }
-  async componentDidMount() {
-    console.log("componentDidmount");
-    const data = await API.graphql(graphqlOperation(listGames, { filter: { name: { contains: 'Forza' } } }))
-    if (data != null) {
-      this.setState({
-        games: data.data.listGames.items
-
-      })
-    }
-    console.log(this.state.games);
-
-  }
+ 
   render() {
 
     return (
-      <div className="App">
-        {this.state.games.map(game => (
-          game.name
-        ))}
+      <div>
+         <BrowserRouter>
+          <Switch>
+            <Route exact={true} path='/' component={Home} />
+            {/* <Route exact={true} path='/details/:id' component={GameDetails} />
+            <Route exact={true} path='/search/:search_name' component={Search} />
+            <Route exact={true} path='/search/details/:id' component={GameDetails_Game} /> */}
 
-        Test
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
