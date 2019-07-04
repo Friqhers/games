@@ -63,7 +63,7 @@ class Search extends Component {
                                 <div className="search_gamecard">
                                     <div key={result.id}>
                                         <div className="game_card align-items-center">
-                                            <Link id="game_header_link" to={`/search/details/${result.id}`}>
+                                            <Link id="game_header_link" to={`/details/${result.id}`}>
                                                 <h4 className="text-center .mx-auto d-block title">{
                                                     result.name
                                                 }</h4>
