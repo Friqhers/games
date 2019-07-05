@@ -19,16 +19,19 @@ class Home extends Component {
     super();
     this.state = {
       games: [],
-      search_name: ""
+      search_name: "",
+      isLoading: false
     };
   }
 
   async componentDidMount() {
     console.log("componentDidmount");
+    this.setState({ isLoading: true });
     const data = await API.graphql(graphqlOperation(listGames));
     if (data != null) {
       this.setState({
-        games: data.data.listGames.items
+        games: data.data.listGames.items,
+        isLoading:false
       });
     }
     console.log(this.state.games);
