@@ -1,5 +1,5 @@
 #run 
-#amplify push after changing
+#amplify push and amplify update api after changing 
 
 type Game @model {
 	id: ID!
