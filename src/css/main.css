@@ -44,10 +44,10 @@ body {
     border-radius: 5px;
   }
   .title_details {
-    height: 100px;
     background-color: rgba(41, 42, 43, 0.3);
     border-radius: 5px;
     color: rgba(61, 11, 105, 0.8);
+    font-size: 4vw;
   }
   #center_text {
     /* background-color: rgba(131, 135, 141, 0.3); */
