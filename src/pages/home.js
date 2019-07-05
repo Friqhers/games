@@ -130,30 +130,30 @@ class Home extends Component {
       <div className="container-fluid">
         <Navbar bg="dark" expand="lg">
           <Navbar.Brand>
-            <Link to="/">Home</Link>
+            <Link className="navbar_link" to="/">Home</Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link>
-                <Link to="/">Test</Link>
+                <Link className="navbar_link" to="/">Test</Link>
               </Nav.Link>
               <Nav.Link>
-                <Link to="/">Test</Link>
+                <Link  className="navbar_link" to="/">Test</Link>
               </Nav.Link>
               <NavDropdown title="Dropdown test" id="basic-nav-dropdown">
                 <NavDropdown.Item>
-                  <Link to="/">Test</Link>
+                  <Link className="navbar_link" to="/">Test</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/">Test</Link>
+                  <Link className="navbar_link" to="/">Test</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/">Test</Link>
+                  <Link className="navbar_link" to="/">Test</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item>
-                  <Link to="/">Test</Link>
+                  <Link className="navbar_link" to="/">Test</Link>
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
@@ -171,7 +171,7 @@ class Home extends Component {
                 style={{ width: "370px" }}
               />
               <Button>
-                <Link className="btn btn-succes"
+                <Link className="btn btn-succes navbar_link"
                   to={
                     search_name !== null &&
                     search_name.length !== 0 &&

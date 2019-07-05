@@ -133,4 +133,9 @@ body {
     width: 200px;
     height: 200px;
   }
-  
+  .navbar_link:hover{
+    text-decoration: none;
+  }
+  .navbar_link{
+    text-decoration: none;
+  }
