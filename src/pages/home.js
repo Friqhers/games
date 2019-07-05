@@ -136,12 +136,12 @@ class Home extends Component {
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item .active">
-                <a className="nav-link" href="upcominggames.html">
+                <a className="nav-link" href="test.html">
                   TEST
                 </a>
               </li>
               <li className="nav-item .active">
-                <a className="nav-link" href="upcominggames2019.html">
+                <a className="nav-link" href="test.html">
                   TEST
                 </a>
               </li>

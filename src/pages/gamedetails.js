@@ -130,7 +130,7 @@ class GameDetails extends Component {
                       </div>
                       <div className="detail_images">
                         {result.images.map(img => (
-                          <img className="rounded" src={img} />
+                          <img className="rounded img-fluid" src={img} />
                         ))}
                       </div>
                     </div>
