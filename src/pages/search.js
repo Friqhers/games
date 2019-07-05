@@ -5,13 +5,13 @@ import { listGames, getGame } from "../graphql/queries";
 import { Link } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import {
-    Navbar,
-    Nav,
-    NavDropdown,
-    Form,
-    FormControl,
-    Button
-  } from "react-bootstrap";
+  Navbar,
+  Nav,
+  NavDropdown,
+  Form,
+  FormControl,
+  Button
+} from "react-bootstrap";
 
 class Search extends Component {
   constructor() {
@@ -28,7 +28,11 @@ class Search extends Component {
     this.setState({ isLoading: true });
     const data = await API.graphql(
       graphqlOperation(listGames, {
-        filter: { name: { contains: `${this.props.match.params.search_name}` } }
+        filter: {
+          name: {
+            contains: `${this.props.match.params.search_name}`
+          }
+        }
       })
     );
     if (data != null) {
@@ -44,7 +48,9 @@ class Search extends Component {
     this.setState({ isLoading: true });
     const data = await API.graphql(
       graphqlOperation(listGames, {
-        filter: { name: { contains: `${this.state.search_name_url}` } }
+        filter: {
+          name: { contains: `${this.state.search_name_url}` }
+        }
       })
     );
     if (data != null) {
@@ -194,7 +200,8 @@ class Search extends Component {
                 style={{ width: "370px" }}
               />
               <Button>
-                <Link className="btn btn-succes"
+                <Link
+                  className="btn btn-succes"
                   to={
                     search_name !== null &&
                     search_name.length !== 0 &&

@@ -128,64 +128,83 @@ class Home extends Component {
 
     return (
       <div className="container-fluid">
-        <Navbar bg="dark" expand="lg">
-          <Navbar.Brand>
-            <Link className="navbar_link" to="/">Home</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link>
-                <Link className="navbar_link" to="/">Test</Link>
-              </Nav.Link>
-              <Nav.Link>
-                <Link  className="navbar_link" to="/">Test</Link>
-              </Nav.Link>
-              <NavDropdown title="Dropdown test" id="basic-nav-dropdown">
-                <NavDropdown.Item>
-                  <Link className="navbar_link" to="/">Test</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link className="navbar_link" to="/">Test</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link className="navbar_link" to="/">Test</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item>
-                  <Link className="navbar_link" to="/">Test</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Form inline>
-              <FormControl
-                type="text"
-                placeholder="Search"
-                className="mr-sm-2"
-                onChange={e => {
-                  this.setState({
-                    search_name: e.currentTarget.value
-                  });
-                }}
-                onKeyDown={this.handleKeyPress}
-                style={{ width: "370px" }}
-              />
-              <Button>
-                <Link className="btn btn-succes navbar_link"
-                  to={
-                    search_name !== null &&
-                    search_name.length !== 0 &&
-                    search_name !== "Search"
-                      ? `/search/${search_name}`
-                      : "/"
-                  }
-                >
-                  Search
+        <div className="row">
+          <div className="col-lg-12">
+            <Navbar bg="dark" expand="lg">
+              <Navbar.Brand>
+                <Link className="navbar_link" to="/">
+                  Home
                 </Link>
-              </Button>
-            </Form>
-          </Navbar.Collapse>
-        </Navbar>
+              </Navbar.Brand>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="mr-auto">
+                  <Nav.Link>
+                    <Link className="navbar_link" to="/">
+                      Test
+                    </Link>
+                  </Nav.Link>
+                  <Nav.Link>
+                    <Link className="navbar_link" to="/">
+                      Test
+                    </Link>
+                  </Nav.Link>
+                  <NavDropdown title="Dropdown test" id="basic-nav-dropdown">
+                    <NavDropdown.Item>
+                      <Link className="navbar_link" to="/">
+                        Test
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link className="navbar_link" to="/">
+                        Test
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link className="navbar_link" to="/">
+                        Test
+                      </Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item>
+                      <Link className="navbar_link" to="/">
+                        Test
+                      </Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </Nav>
+                <Form inline>
+                  <FormControl
+                    type="text"
+                    placeholder="Search"
+                    className="mr-sm-2"
+                    onChange={e => {
+                      this.setState({
+                        search_name: e.currentTarget.value
+                      });
+                    }}
+                    onKeyDown={this.handleKeyPress}
+                    // style={{ width: "300px" }}
+                  />
+                  <Button>
+                    <Link
+                      className="btn btn-succes navbar_link"
+                      to={
+                        search_name !== null &&
+                        search_name.length !== 0 &&
+                        search_name !== "Search"
+                          ? `/search/${search_name}`
+                          : "/"
+                      }
+                    >
+                      Search
+                    </Link>
+                  </Button>
+                </Form>
+              </Navbar.Collapse>
+            </Navbar>
+          </div>
+        </div>
         <div className="row">
           <div class="col-lg-12">{this.renderGames()}</div>
         </div>
