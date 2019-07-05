@@ -5,6 +5,9 @@ import { listGames, getGame } from "../graphql/queries";
 import { Link } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 
+
+import { Player } from "video-react";
+
 class GameDetails extends Component {
   constructor() {
     super();
@@ -111,7 +114,7 @@ class GameDetails extends Component {
                         <b>Rating: </b> {result.rating}
                       </p>
                       <p>
-                          <b>Platform</b> {result.platform}
+                        <b>Platform</b> {result.platform}
                       </p>
                     </div>
                     {/*COLUMN 1 END*/}
@@ -119,6 +122,12 @@ class GameDetails extends Component {
                     {/*COLUMN 2 START*/}
                     <div className="col-lg-8" id="center_text">
                       <h1 className="text-center title_details">Galery</h1>
+                      <div>
+                        <Player
+                          playsInline
+                          src={result.video}
+                        />
+                      </div>
                       <div className="detail_images">
                         {result.images.map(img => (
                           <img className="rounded" src={img} />

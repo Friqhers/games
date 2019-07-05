@@ -49,7 +49,7 @@ class Home extends Component {
                       </Link>
 
 
-                      {result.images != null ? (<Link to={`/search/details/${result.id}`} className="rounded .mxauto d-block">
+                      {result.images != null ? (<Link to={`/details/${result.id}`} className="rounded .mxauto d-block">
                         <img src={result.thumbnail_img} className="rounded imagePoster"></img>
                       </Link>
                       ) : null}
