@@ -43,7 +43,7 @@ class Home extends Component {
               />{" "}
             </div>
           ) : (
-            <div id="test">
+            <div className="row d-flex justify-content-center" id="test">
               {Array.isArray(this.state.games) &&
                 this.state.games.map(result =>
                   result.description != "" ? (

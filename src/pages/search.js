@@ -72,7 +72,7 @@ class Search extends Component {
               />{" "}
             </div>
           ) : (
-            <div id="test">
+            <div className="row d-flex justify-content-center" id="test">
               {Array.isArray(this.state.games) &&
                 this.state.games.map(result =>
                   result.description != "" ? (
@@ -104,10 +104,15 @@ class Search extends Component {
                               <b>Release Date: </b>
                               {result.release_date}
                             </p>
-
+                            <p className="text-center game_text">
+                              <b>Genre: </b> {result.genre}{" "}
+                            </p>
                             <p className="text-center game_text">
                               <b>Rating: </b>
                               {result.rating}
+                            </p>
+                            <p className="text-center game_text">
+                              <b>Platform</b> {result.platform}
                             </p>
                           </div>
                         </div>
