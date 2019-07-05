@@ -79,7 +79,7 @@ class GameDetails extends Component {
                       id="center_text"
                     >
                       <br />
-                      <img src={result.thumbnail_img} />
+                      <img className="img-fluid" src={result.thumbnail_img} />
                     </div>
                     {/*COLUMN 1 END*/}
 

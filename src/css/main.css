@@ -107,6 +107,10 @@ body {
     /* margin-left: 135px; */
     width: 500px;
   }
+  .game{
+    border:solid;
+    border-left-color: red;
+  }
   #test {
     display: flex;
     flex-flow: row;

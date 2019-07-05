@@ -66,7 +66,7 @@ class Home extends Component {
                             >
                               <img
                                 src={result.thumbnail_img}
-                                className="rounded imagePoster"
+                                className="rounded imagePoster img-fluid"
                               />
                             </Link>
                           ) : null}

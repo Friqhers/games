@@ -9,6 +9,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import '../node_modules/jquery/dist/jquery.min.js'
 // import '../node_modules/jquery/dist/jquery';
 import "../node_modules/video-react/dist/video-react.css"; // import css
+
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
 Amplify.configure(config)
