@@ -4,6 +4,14 @@ import { API, graphqlOperation, graphql } from "aws-amplify";
 import { listGames, getGame } from "../graphql/queries";
 import { Link } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
+import {
+    Navbar,
+    Nav,
+    NavDropdown,
+    Form,
+    FormControl,
+    Button
+  } from "react-bootstrap";
 
 class Search extends Component {
   constructor() {
@@ -143,68 +151,64 @@ class Search extends Component {
     return (
       <div className="container-fluid background">
         {/*HEADER START*/}
-        <nav className="navbar navbar-expand-lg bg-dark navbar-dark justify-content-left fixed-top">
-          <Link className="nav-brand-home home" to="/">
-            HOME
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapsibleNavbar"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item .active">
-                <a className="nav-link" href="upcominggames.html">
-                  TEST
-                </a>
-              </li>
-              <li className="nav-item .active">
-                <a className="nav-link" href="upcominggames2019.html">
-                  TEST
-                </a>
-              </li>
-            </ul>
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item .active">
-                <input
-                  type="text"
-                  placeholder="Search"
-                  value={search_name}
-                  onChange={e => {
-                    this.setState({
-                      search_name: e.currentTarget.value,
-                      search_name_url: e.currentTarget.value
-                    });
-                  }}
-                  onKeyDown={this.handleKeyPress}
-                  style={{ width: "370px" }}
-                />
-                <Link
-                  className="btn btn-success"
+        <Navbar bg="dark" expand="lg">
+          <Navbar.Brand>
+            <Link to="/">Home</Link>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link>
+                <Link to="/">Test</Link>
+              </Nav.Link>
+              <Nav.Link>
+                <Link to="/">Test</Link>
+              </Nav.Link>
+              <NavDropdown title="Dropdown test" id="basic-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link to="/">Test</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/">Test</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/">Test</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item>
+                  <Link to="/">Test</Link>
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+            <Form inline>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                className="mr-sm-2"
+                onChange={e => {
+                  this.setState({
+                    search_name: e.currentTarget.value
+                  });
+                }}
+                onKeyDown={this.handleKeyPress}
+                style={{ width: "370px" }}
+              />
+              <Button>
+                <Link className="btn btn-succes"
                   to={
-                    search_name != null &&
-                    search_name.length != 0 &&
-                    search_name != "Search"
+                    search_name !== null &&
+                    search_name.length !== 0 &&
+                    search_name !== "Search"
                       ? `/search/${search_name}`
-                      : `/search/${this.props.match.params.search_name}`
+                      : "/"
                   }
-                  onClick={e => {
-                    if (search_name != "") {
-                      this.setState({ games: [] });
-                      this.getGame();
-                    }
-                  }}
                 >
                   Search
                 </Link>
-              </li>
-            </ul>
-          </div>
-        </nav>
+              </Button>
+            </Form>
+          </Navbar.Collapse>
+        </Navbar>
         {/*HEADER END*/}
 
         {/*Row 1 START*/}
