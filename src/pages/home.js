@@ -100,7 +100,7 @@ class Home extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul className="navbar-nav">
+            <ul className="navbar-nav mr-auto">
               <li className="nav-item .active">
                 <a className="nav-link" href="upcominggames.html">
                   TEST
@@ -112,7 +112,11 @@ class Home extends Component {
                 </a>
               </li>
 
-              <li className="nav-item .active">
+          
+
+            </ul>
+            <ul className="navbar-nav ml-auto">
+            <li className="nav-item .active ">
                 <input type="text" placeholder="Search" value={search_name}
                   onChange={e => {
                     this.setState({
@@ -121,12 +125,11 @@ class Home extends Component {
                     });
                   }}
                 //onKeyDown={this.handleKeyPress}
-                />
+                style={{width: "370px"}}/>
                 <Link className="btn btn-success"
                   to={search_name != null && search_name.length != 0 && search_name != "Search" ? (`/search/${search_name}`) : (`/`)}
                 >Search</Link>
               </li>
-
             </ul>
 
           </div>
