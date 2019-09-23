@@ -20,7 +20,8 @@ class Search extends Component {
       games: [],
       search_name: "",
       search_name_url: "",
-      isLoading: false
+      isLoading: false,
+      isFound: false,
     };
   }
   async componentDidMount() {
@@ -38,9 +39,11 @@ class Search extends Component {
     if (data != null) {
       this.setState({
         games: data.data.listGames.items,
-        isLoading: false
+        isLoading: false,
+        isFound: true
       });
     }
+
     console.log(this.state.games);
   }
   async getGame() {
@@ -56,9 +59,11 @@ class Search extends Component {
     if (data != null) {
       this.setState({
         games: data.data.listGames.items,
-        isLoading: false
+        isLoading: false,
+        isFound: true
       });
     }
+
     console.log(this.state.games);
   }
   handleKeyPress = e => {

@@ -22,5 +22,17 @@
             "StackName": "games-master-20190703153254",
             "StackId": "arn:aws:cloudformation:eu-central-1:000011783816:stack/games-master-20190703153254/adcd71b0-9d8e-11e9-b01a-0692890e48f0"
         }
+    },
+    "newtestone": {
+        "awscloudformation": {
+            "AuthRoleName": "games-newtestone-20190923181453-authRole",
+            "UnauthRoleArn": "arn:aws:iam::000011783816:role/games-newtestone-20190923181453-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::000011783816:role/games-newtestone-20190923181453-authRole",
+            "Region": "eu-central-1",
+            "DeploymentBucketName": "games-newtestone-20190923181453-deployment",
+            "UnauthRoleName": "games-newtestone-20190923181453-unauthRole",
+            "StackName": "games-newtestone-20190923181453",
+            "StackId": "arn:aws:cloudformation:eu-central-1:000011783816:stack/games-newtestone-20190923181453/0841cbc0-de15-11e9-8eae-063afe18f80a"
+        }
     }
 }
